@@ -6,6 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * elasticsearchlearn - PACKAGE_NAME
  *
@@ -31,5 +34,31 @@ public class MapperTest {
 	public void insertByXContentBuilder() throws Exception {
 		OrderModel orderModel = new OrderModel(151, 72022963, "北京菠萝店", 20180101, "201801011212360002", 76);
 		IndexMapper.insertByXContentBuilder(orderModel);
+	}
+
+	@Test
+	public void insertByXContentBuilderArray() throws Exception {
+		List<OrderModel> orderModelList = new ArrayList<OrderModel>();
+		int i = 3;
+		while(i <= 1000) {
+			String orderKey = "20180101121236" + String.format("%04d", i);
+			OrderModel orderModel = new OrderModel(151, 72022963, "北京菠萝店", 20180101, orderKey, Double.valueOf(i));
+			orderModelList.add(orderModel);
+			i++;
+		}
+
+		IndexMapper.insertByXContentBuilder(orderModelList);
+	}
+
+	@Test
+	public void getOrderModel() {
+		OrderModel orderModel = IndexMapper.getOrderModel();
+
+		System.out.println(orderModel == null ? "" : orderModel.toString());
+	}
+
+	@Test
+	public void deteteOrderModel() {
+		IndexMapper.deleteOrderModel();
 	}
 }
