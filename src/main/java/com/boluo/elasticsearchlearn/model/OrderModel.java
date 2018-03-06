@@ -1,8 +1,8 @@
-package org.boluo.elasticsearchlearn.model;
+package com.boluo.elasticsearchlearn.model;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;
-import org.boluo.elasticsearchlearn.util.Constants;
+import com.boluo.elasticsearchlearn.util.Constants;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.common.xcontent.XContentBuilder;
@@ -50,7 +50,8 @@ public class OrderModel {
 
 		for (OrderModel orderModel : orderModelList) {
 			try {
-				IndexRequest indexRequest = new IndexRequest(Constants.INDEX_ORDER, Constants.TYPE_ORDER);
+				String id = String.format("%d-%d-%d-%s", orderModel.groupID, orderModel.shopID, orderModel.reportDate, orderModel.orderKey);
+				IndexRequest indexRequest = new IndexRequest(Constants.INDEX_ORDER, Constants.TYPE_ORDER, id);
 				indexRequest.source(toXContentBuilder(orderModel));
 				bulkProcessor.add(indexRequest);
 			} catch (Exception e) {

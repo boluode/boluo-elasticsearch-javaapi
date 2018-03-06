@@ -1,4 +1,4 @@
-package org.boluo.elasticsearchlearn.util;
+package com.boluo.elasticsearchlearn.util;
 
 /**
  * elasticsearchlearn - org.boluo.elasticsearchlearn.util

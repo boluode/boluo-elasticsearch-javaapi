@@ -1,6 +1,6 @@
-package org.boluo.elasticsearchlearn.manager;
+package com.boluo.elasticsearchlearn.manager;
 
-import org.boluo.elasticsearchlearn.config.EsConfig;
+import com.boluo.elasticsearchlearn.config.EsConfig;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;

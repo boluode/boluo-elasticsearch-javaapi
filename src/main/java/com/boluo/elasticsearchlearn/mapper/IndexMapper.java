@@ -1,8 +1,8 @@
-package org.boluo.elasticsearchlearn.mapper;
+package com.boluo.elasticsearchlearn.mapper;
 
-import org.boluo.elasticsearchlearn.manager.EsManager;
-import org.boluo.elasticsearchlearn.model.OrderModel;
-import org.boluo.elasticsearchlearn.util.Constants;
+import com.boluo.elasticsearchlearn.manager.EsManager;
+import com.boluo.elasticsearchlearn.model.OrderModel;
+import com.boluo.elasticsearchlearn.util.Constants;
 import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.bulk.BulkRequest;

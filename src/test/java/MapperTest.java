@@ -1,7 +1,7 @@
-import org.boluo.elasticsearchlearn.config.EsConfig;
-import org.boluo.elasticsearchlearn.manager.EsManager;
-import org.boluo.elasticsearchlearn.mapper.IndexMapper;
-import org.boluo.elasticsearchlearn.model.OrderModel;
+import com.boluo.elasticsearchlearn.config.EsConfig;
+import com.boluo.elasticsearchlearn.manager.EsManager;
+import com.boluo.elasticsearchlearn.mapper.IndexMapper;
+import com.boluo.elasticsearchlearn.model.OrderModel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,9 +39,9 @@ public class MapperTest {
 	@Test
 	public void insertByXContentBuilderArray() throws Exception {
 		List<OrderModel> orderModelList = new ArrayList<OrderModel>();
-		int i = 3;
-		while(i <= 1000) {
-			String orderKey = "20180101121236" + String.format("%04d", i);
+		int i = 10000;
+		while(i <= 10010) {
+			String orderKey = "20180101121236" + String.format("%05d", i);
 			OrderModel orderModel = new OrderModel(151, 72022963, "北京菠萝店", 20180101, orderKey, Double.valueOf(i));
 			orderModelList.add(orderModel);
 			i++;

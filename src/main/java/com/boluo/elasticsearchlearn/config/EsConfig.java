@@ -1,4 +1,4 @@
-package org.boluo.elasticsearchlearn.config;
+package com.boluo.elasticsearchlearn.config;
 
 import lombok.Data;
 
